@@ -35,7 +35,7 @@ exports.signin = async function(req,res,next){
 	}catch(err){
 		return next({
 				status:400,
-				message:" Invalid Email/Password."
+				message:"Invalid Email/Password."
 			});
 	}
 	// if it matches log then log them in
@@ -43,6 +43,7 @@ exports.signin = async function(req,res,next){
 
 exports.signup = async function(req,res,next){
 	try{
+		
 		// create user
 		// create a token(signing a token)
 		let user = await db.User.create(req.body);
@@ -69,7 +70,7 @@ exports.signup = async function(req,res,next){
 		return next({
 			status:400,
 			message:err.message
-		})
+		});
 		// see what kind of error
 		// if it is a certain error
 		// respond with username/email already taken

@@ -14,8 +14,10 @@ const db = require("./models");
 const PORT =  process.env.PORT || 8081;
 
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
+
+
 
 // all routes here 
 app.use("/api/auth",authRoutes);
